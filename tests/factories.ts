@@ -1,0 +1,52 @@
+import type { Order } from "@/lib/orders/types";
+
+export const makeOrder = (overrides: Partial<Order> = {}): Order => {
+  const now = new Date().toISOString();
+  return {
+    id: "11111111-2222-4333-8444-555555555555",
+    orderNumber: "MG-2610-ABC123",
+    accessTokenHash: "0".repeat(64),
+    accessTokenCiphertext: "iv.tag.data",
+    status: "completed",
+    paymentStatus: "paid",
+    input: {
+      childName: "Аня",
+      childAge: 6,
+      interests: ["space", "drawing"],
+      extraDetails: "любит рисовать кометы",
+      theme: "cosmos",
+      mood: "magical",
+      wish: "побывать на Луне",
+      email: "parent@example.com",
+      consentVersion: "2026-10-23",
+    },
+    email: "parent@example.com",
+    priceRub: 499,
+    currency: "RUB",
+    isDemo: true,
+    checkoutUrl: null,
+    paymentProvider: "test",
+    paymentId: "test_1",
+    generation: {
+      status: "completed",
+      step: "email",
+      progress: 100,
+      attempts: 1,
+      error: null,
+      startedAt: now,
+      finishedAt: now,
+      leaseUntil: null,
+    },
+    result: null,
+    pdfStorageKey: null,
+    emailSentAt: null,
+    emailError: null,
+    dataDeletedAt: null,
+    createdAt: now,
+    updatedAt: now,
+    paidAt: now,
+    completedAt: now,
+    refundedAt: null,
+    ...overrides,
+  };
+};
