@@ -127,10 +127,11 @@ export const parseAndSanitizeStory = (raw: string, childName: string): { story: 
   assertSafe(story.illustrationScenes.map((scene) => scene.alt + " " + scene.prompt).join(" "));
   assertSafe(story.letter + " " + story.closingLine);
 
+  // Имя стоит в именительном падеже, поэтому не дописываем «... для <имя>»:
+  // такая конструкция грамматически неверна. Двоеточие сохраняет заголовок
+  // и не требует склонения.
   if (!story.title.toLowerCase().includes(childName.toLowerCase())) {
-    // Personalisation is a product promise, but the title is not the only place where it appears.
-    // Add the name only when it fits naturally and the title is short enough.
-    const candidate = story.title + " для " + childName;
+    const candidate = childName + ": " + story.title;
     if (candidate.length <= 90) story.title = candidate;
   }
 

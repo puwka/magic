@@ -1,0 +1,50 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - banner [ref=f4e3]:
+      - generic [ref=f4e5]:
+        - link "Магия — на главную" [ref=f4e6] [cursor=pointer]:
+          - /url: /
+          - generic [aria-hidden] [ref=f4e7]: ✳
+          - generic [ref=f4e8]:
+            - generic [ref=f4e9]: магия
+            - generic [ref=f4e10]: подарки с историей
+        - generic [ref=f4e16]:
+          - link "Создать сказку ↗" [ref=f4e17] [cursor=pointer]:
+            - /url: /create
+          - group [ref=f4e57]:
+            - generic "Открыть меню" [ref=f4e58] [cursor=pointer]: Меню
+    - main [ref=f4e18]:
+      - generic [ref=f4e20]:
+        - heading "Оплата заказа MG-2610-37ECCE" [level=1] [ref=f4e34]
+        - paragraph [ref=f4e35]: "Сказка, в которой Тимур — в главной роли: Море, 9 лет. После оплаты книга начнёт создаваться автоматически."
+        - generic [ref=f4e36]:
+          - strong [ref=f4e37]: 499 ₽
+          - generic [ref=f4e38]: разовый платёж, без подписки
+        - generic [ref=f4e39]:
+          - generic [aria-hidden] [ref=f4e40]: "!"
+          - generic [ref=f4e41]: "Тестовый режим оплаты: деньги не списываются. Нажмите кнопку ниже, чтобы подтвердить оплату и посмотреть, как работает сервис целиком."
+        - generic [ref=f4e42]:
+          - button "Подтвердить тестовую оплату" [ref=f4e43] [cursor=pointer]
+          - link "Вернуться к заказу" [ref=f4e44] [cursor=pointer]:
+            - /url: /order/54cc0500-c863-4c72-8b27-12046b32ca70
+        - paragraph [ref=f4e45]:
+          - text: Квитанция и доступ к книге придут на e2•••••••@example.com. Если оплата не проходит, напишите на
+          - link "support@magia.example" [ref=f4e46] [cursor=pointer]:
+            - /url: mailto:support@magia.example
+          - text: .
+    - contentinfo [ref=f4e25]:
+      - generic [ref=f4e26]:
+        - generic [ref=f4e27]: © 2026 Магия · подарки с историей · цифровая книга в PDF
+        - generic [ref=f4e28]:
+          - link "Политика данных" [ref=f4e29] [cursor=pointer]:
+            - /url: /legal/privacy
+          - link "Согласие" [ref=f4e30] [cursor=pointer]:
+            - /url: /legal/consent
+          - link "Условия сервиса" [ref=f4e31] [cursor=pointer]:
+            - /url: /legal/terms
+          - link "Реквизиты" [ref=f4e32] [cursor=pointer]:
+            - /url: /legal/requisites
+          - link "Найти заказ" [ref=f4e33] [cursor=pointer]:
+            - /url: /recover
+  - button "Open Next.js Dev Tools" [ref=f4e52] [cursor=pointer]
+  - alert [ref=f4e56]

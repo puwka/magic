@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Магия">
+  <rect width="64" height="64" rx="14" fill="#263cc4"/>
+  <path d="M32 11l4.7 14.6L52 30.5l-15.3 4.9L32 50l-4.7-14.6L12 30.5l15.3-4.9z" fill="#ffd86b"/>
+  <circle cx="32" cy="30.5" r="3.4" fill="#f4654e"/>
+</svg>

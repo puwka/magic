@@ -1,0 +1,143 @@
+- generic [ref=f3e2]:
+  - banner [ref=f3e3]:
+    - generic [ref=f3e5]:
+      - link "Магия — на главную" [ref=f3e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f3e7]: ✳
+        - generic [ref=f3e8]:
+          - generic [ref=f3e9]: магия
+          - generic [ref=f3e10]: подарки с историей
+      - generic [ref=f3e11]:
+        - link "Создать сказку ↗" [ref=f3e12] [cursor=pointer]:
+          - /url: /create
+        - group [ref=f3e13]:
+          - generic "Открыть меню" [ref=f3e14] [cursor=pointer]: Меню
+  - main [ref=f3e15]:
+    - generic [ref=f3e16]:
+      - generic [ref=f3e17]:
+        - generic [ref=f3e18]: Конструктор сказки
+        - heading [level=1] [ref=f3e19]:
+          - text: Соберём историю
+          - emphasis [ref=f3e20]: вместе
+        - paragraph [ref=f3e21]: "Три коротких шага: герой, сюжет и проверка заказа. Регистрация не нужна, фотографии не понадобятся — только имя, возраст и то, что вы захотите рассказать."
+      - generic [ref=f3e22]:
+        - generic [ref=f3e23]:
+          - generic [ref=f3e24]:
+            - button "1 Герой" [ref=f3e25]:
+              - generic [ref=f3e26]: "1"
+              - text: Герой
+            - button "2 История" [ref=f3e27]:
+              - generic [ref=f3e28]: "2"
+              - text: История
+            - button "3 Проверка и оплата" [ref=f3e29]:
+              - generic [ref=f3e30]: "3"
+              - text: Проверка и оплата
+          - note [ref=f3e31]:
+            - generic [aria-hidden] [ref=f3e32]: "!"
+            - generic [ref=f3e33]:
+              - strong [ref=f3e34]: Демо-режим.
+              - text: "Книга будет создана демонстрационным генератором: текст — по готовым сюжетным профилям, иллюстрации — встроенным рисовальщиком. Это честное превью сервиса, а не реальная AI-генерация."
+          - generic [ref=f3e35]:
+            - generic [ref=f3e36]:
+              - heading "Расскажите о герое" [level=2] [ref=f3e37]
+              - paragraph [ref=f3e38]: Имя и детали попадут в текст и иллюстрации. Никаких фотографий и лишних данных — только то, что действительно нужно для истории.
+              - generic [ref=f3e39]:
+                - generic [ref=f3e40]:
+                  - generic [ref=f3e41]:
+                    - generic [ref=f3e42]: Имя ребёнка *
+                    - textbox "Имя ребёнка *" [ref=f3e43]:
+                      - /placeholder: Например, Маша
+                  - generic [ref=f3e44]:
+                    - generic [ref=f3e45]: Возраст *
+                    - generic [ref=f3e46]:
+                      - button "2" [ref=f3e47] [cursor=pointer]
+                      - button "3" [ref=f3e48] [cursor=pointer]
+                      - button "4" [ref=f3e49] [cursor=pointer]
+                      - button "5" [ref=f3e50] [cursor=pointer]
+                      - button "6" [pressed] [ref=f3e51] [cursor=pointer]
+                      - button "7" [ref=f3e52] [cursor=pointer]
+                      - button "8" [ref=f3e53] [cursor=pointer]
+                      - button "9" [ref=f3e54] [cursor=pointer]
+                      - button "10" [ref=f3e55] [cursor=pointer]
+                      - button "11" [ref=f3e56] [cursor=pointer]
+                      - button "12" [ref=f3e57] [cursor=pointer]
+                      - button "13" [ref=f3e58] [cursor=pointer]
+                      - button "14" [ref=f3e59] [cursor=pointer]
+                  - generic [ref=f3e60]:
+                    - generic [ref=f3e61]: Увлечения — до 6 штук
+                    - generic [ref=f3e62]:
+                      - button "Космос" [ref=f3e63] [cursor=pointer]
+                      - button "Животные" [ref=f3e64] [cursor=pointer]
+                      - button "Динозавры" [ref=f3e65] [cursor=pointer]
+                      - button "Рисование" [ref=f3e66] [cursor=pointer]
+                      - button "Музыка" [ref=f3e67] [cursor=pointer]
+                      - button "Футбол" [ref=f3e68] [cursor=pointer]
+                      - button "Море" [ref=f3e69] [cursor=pointer]
+                      - button "Роботы" [ref=f3e70] [cursor=pointer]
+                      - button "Принцессы" [ref=f3e71] [cursor=pointer]
+                      - button "Путешествия" [ref=f3e72] [cursor=pointer]
+                      - button "Книги" [ref=f3e73] [cursor=pointer]
+                      - button "Природа" [ref=f3e74] [cursor=pointer]
+                  - generic [ref=f3e75]:
+                    - generic [ref=f3e76]: Особенные детали
+                    - textbox "Особенные детали" [ref=f3e77]:
+                      - /placeholder: Любимая игрушка, привычки, смешные словечки, важные для семьи моменты…
+                    - generic [ref=f3e78]: Необязательно. 0 / 400 символов
+                - generic [ref=f3e79]:
+                  - generic [ref=f3e80]:
+                    - generic [ref=f3e81]: Будущая книга
+                    - generic [ref=f3e82]: ЧЕРНОВИК
+                  - generic [ref=f3e84]:
+                    - generic [ref=f3e85]:
+                      - text: Моя
+                      - emphasis [ref=f3e87]: сказка
+                    - generic [ref=f3e89]: герой · личная сказка
+                  - generic [ref=f3e90]:
+                    - strong [ref=f3e91]: История, в которой герой — в главной роли
+                    - generic [ref=f3e92]: Волшебный лес · 6 лет
+                  - generic [ref=f3e93]:
+                    - generic [aria-hidden] [ref=f3e94]: ✦
+                    - text: Обложку и иллюстрации соберём после оплаты
+            - generic [ref=f3e95]:
+              - link "← На главную" [ref=f3e96] [cursor=pointer]:
+                - /url: /
+              - button "Продолжить →" [ref=f3e97] [cursor=pointer]
+        - complementary "Итог заказа" [ref=f3e98]:
+          - heading "Ваш заказ" [level=3] [ref=f3e99]
+          - generic [ref=f3e100]:
+            - generic [ref=f3e101]: Моясказка
+            - generic [ref=f3e102]: герой · личная сказка
+          - generic [ref=f3e103]:
+            - generic [ref=f3e104]:
+              - term [ref=f3e105]: Герой
+              - definition [ref=f3e106]: —
+            - generic [ref=f3e107]:
+              - term [ref=f3e108]: Возраст
+              - definition [ref=f3e109]: 6 лет
+            - generic [ref=f3e110]:
+              - term [ref=f3e111]: Тематика
+              - definition [ref=f3e112]: Волшебный лес
+            - generic [ref=f3e113]:
+              - term [ref=f3e114]: Характер
+              - definition [ref=f3e115]: Волшебная
+            - generic [ref=f3e116]:
+              - term [ref=f3e117]: Формат
+              - definition [ref=f3e118]: PDF-книга
+          - generic [ref=f3e119]:
+            - generic [ref=f3e120]: Итого
+            - strong [ref=f3e121]: 499 ₽
+          - paragraph [ref=f3e122]: Оплата — на следующем шаге. До оплаты вы ещё раз увидите состав заказа. Черновик ответов сохраняется только в этом браузере.
+  - contentinfo [ref=f3e123]:
+    - generic [ref=f3e124]:
+      - generic [ref=f3e125]: © 2026 Магия · подарки с историей · цифровая книга в PDF
+      - generic [ref=f3e126]:
+        - link "Политика данных" [ref=f3e127] [cursor=pointer]:
+          - /url: /legal/privacy
+        - link "Согласие" [ref=f3e128] [cursor=pointer]:
+          - /url: /legal/consent
+        - link "Условия сервиса" [ref=f3e129] [cursor=pointer]:
+          - /url: /legal/terms
+        - link "Реквизиты" [ref=f3e130] [cursor=pointer]:
+          - /url: /legal/requisites
+        - link "Найти заказ" [ref=f3e131] [cursor=pointer]:
+          - /url: /recover

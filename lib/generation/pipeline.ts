@@ -21,9 +21,14 @@ const seedFor = (value: string) => {
   return digest.readUInt32BE(0);
 };
 
-const sceneSequence = (theme: string): SceneKind[] => {
+export const sceneSequence = (theme: string): SceneKind[] => {
   const primary = sceneKindForTheme(theme);
-  return [primary, primary, primary, "home"];
+  // Четыре иллюстрации должны отличаться друг от друга: утро — дома,
+  // дорога — в основном мире, привал — в другом пейзаже, развязка — снова
+  // в основном мире. Последняя иллюстрация осознанно повторяется на
+  // финальном развороте.
+  const rest = primary === "mountains" ? "forest" : "mountains";
+  return ["home", primary, rest, primary];
 };
 
 const imageKey = (order: Order, name: string) => "orders/" + order.id + "/" + name + ".jpg";

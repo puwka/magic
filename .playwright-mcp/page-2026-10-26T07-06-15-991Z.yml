@@ -1,0 +1,303 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Магия — на главную" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=e7]: ✳
+        - generic [ref=e8]:
+          - generic [ref=e9]: магия
+          - generic [ref=e10]: подарки с историей
+      - generic [ref=e11]:
+        - link "Создать сказку ↗" [ref=e12] [cursor=pointer]:
+          - /url: /create
+        - group [ref=e13]:
+          - generic "Открыть меню" [ref=e14] [cursor=pointer]: Меню
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]: ●
+      - text: Персональная сказка в PDF · без регистрации и фотографий
+      - generic [ref=e18]: —
+      - text: сначала проверьте заказ
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [aria-hidden] [ref=e23]: ✳
+          - text: Иллюстрированная сказка · PDF
+        - heading [level=1] [ref=e24]:
+          - text: Не шаблон.
+          - emphasis [ref=e25]: История про вашего героя.
+        - paragraph [ref=e26]: "Сказка, собранная вокруг конкретного ребёнка: его имя, возраст, увлечения и маленькие детали, которые делают историю личной."
+        - generic [ref=e27]:
+          - link "Создать сказку" [ref=e28] [cursor=pointer]:
+            - /url: /create
+            - text: Создать сказку
+            - generic [aria-hidden] [ref=e29]: ↗
+          - link "Посмотреть примеры" [ref=e30] [cursor=pointer]:
+            - /url: "#preview"
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - generic [aria-hidden] [ref=e33]: ✓
+            - text: Проверка заказа до оплаты
+          - generic [ref=e34]:
+            - generic [aria-hidden] [ref=e35]: ✓
+            - text: Готовая книга за минуты
+      - generic [ref=e36]:
+        - generic [ref=e37]: 01 ПЕРСОНАЛЬНАЯ СКАЗКА
+        - img "Объёмная книга-сказка с иллюстрациями" [ref=e38]
+        - generic [ref=e39]: Имя, деталии любимые герои — внутри.
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [aria-hidden] [ref=e44]: ⌁
+          - generic [ref=e45]:
+            - strong [ref=e46]: Не шаблон
+            - text: Имя и детали внутри истории
+        - generic [ref=e47]:
+          - generic [aria-hidden] [ref=e48]: ◉
+          - generic [ref=e49]:
+            - strong [ref=e50]: Сначала проверка
+            - text: Состав заказа виден до оплаты
+        - generic [ref=e51]:
+          - generic [aria-hidden] [ref=e52]: ↗
+          - generic [ref=e53]:
+            - strong [ref=e54]: Готово онлайн
+            - text: PDF без ожидания доставки
+        - generic [ref=e55]:
+          - generic [aria-hidden] [ref=e56]: ♡
+          - generic [ref=e57]:
+            - strong [ref=e58]: Можно сохранить
+            - text: Скачать, распечатать, отправить
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: Не знаете, с чего начать?
+            - heading [level=2] [ref=e63]:
+              - text: Начнём с
+              - emphasis [ref=e64]: героя
+          - link "Все форматы ↗" [ref=e65] [cursor=pointer]:
+            - /url: "#catalog"
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - heading "Пусть сказка сразу обращается по имени." [level=2] [ref=e68]
+            - paragraph [ref=e69]: "Попробуйте прямо здесь. Это бесплатный пример: регистрация, фотографии и оплата не нужны — просто посмотрите, как имя и детали меняют историю."
+            - generic [ref=e70]:
+              - generic [ref=e71]: ✓ Можно изменить детали
+              - generic [ref=e72]: ✓ Проверка заказа до оплаты
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - strong [ref=e75]: Создадим первый набросок
+              - generic [ref=e76]: Предпросмотр
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - generic [ref=e79]:
+                  - generic [ref=e80]: Как зовут героя сказки?
+                  - textbox "Как зовут героя сказки?" [ref=e81]:
+                    - /placeholder: Например, Маша
+                    - text: Аня
+                - generic [ref=e82]:
+                  - generic [ref=e83]: Сколько лет?
+                  - generic [ref=e84]:
+                    - button "2" [ref=e85] [cursor=pointer]
+                    - button "3" [ref=e86] [cursor=pointer]
+                    - button "4" [ref=e87] [cursor=pointer]
+                    - button "5" [ref=e88] [cursor=pointer]
+                    - button "6" [pressed] [ref=e89] [cursor=pointer]
+                    - button "7" [ref=e90] [cursor=pointer]
+                    - button "8" [ref=e91] [cursor=pointer]
+                    - button "9" [ref=e92] [cursor=pointer]
+                    - button "10" [ref=e93] [cursor=pointer]
+                    - button "11" [ref=e94] [cursor=pointer]
+                    - button "12" [ref=e95] [cursor=pointer]
+                    - button "13" [ref=e96] [cursor=pointer]
+                    - button "14" [ref=e97] [cursor=pointer]
+                - generic [ref=e98]:
+                  - generic [ref=e99]: Тематика истории
+                  - generic [ref=e100]:
+                    - button "Космос" [ref=e101] [cursor=pointer]
+                    - button "Волшебный лес" [pressed] [ref=e102] [cursor=pointer]
+                    - button "Море" [ref=e103] [cursor=pointer]
+                    - button "Динозавры" [ref=e104] [cursor=pointer]
+                    - button "Северные горы" [ref=e105] [cursor=pointer]
+                    - button "Город чудес" [ref=e106] [cursor=pointer]
+                - generic [ref=e107]:
+                  - generic [ref=e108]: Что любит герой? До 3 увлечений
+                  - generic [ref=e109]:
+                    - button "Космос" [pressed] [ref=e110] [cursor=pointer]
+                    - button "Животные" [pressed] [ref=e111] [cursor=pointer]
+                    - button "Динозавры" [ref=e112] [cursor=pointer]
+                    - button "Рисование" [ref=e113] [cursor=pointer]
+                    - button "Музыка" [ref=e114] [cursor=pointer]
+                    - button "Футбол" [ref=e115] [cursor=pointer]
+                    - button "Море" [ref=e116] [cursor=pointer]
+                    - button "Роботы" [ref=e117] [cursor=pointer]
+                    - button "Принцессы" [ref=e118] [cursor=pointer]
+                    - button "Путешествия" [ref=e119] [cursor=pointer]
+                    - button "Книги" [ref=e120] [cursor=pointer]
+                    - button "Природа" [ref=e121] [cursor=pointer]
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Можно посмотреть перед оплатой
+                  - button "Показать пример ↗" [ref=e124] [cursor=pointer]
+              - generic [ref=e125]:
+                - generic [ref=e126]:
+                  - generic [ref=e127]: Ваш подарок
+                  - generic [ref=e128]: ПРИМЕР
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - text: Моя
+                    - emphasis [ref=e133]: сказка
+                  - generic [ref=e135]: Аня · личная сказка
+                - generic [ref=e136]:
+                  - strong [ref=e137]: История, в которой Аня — в главной роли
+                  - generic [ref=e138]: Волшебный лес · 6 лет · Космос, Животные
+                - generic [ref=e139]:
+                  - generic [aria-hidden] [ref=e140]: ✦
+                  - text: Имя и детали появятся внутри истории
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: Сначала посмотрите
+          - heading [level=2] [ref=e144]:
+            - text: Не верьте на слово.
+            - emphasis [ref=e145]: Загляните внутрь.
+          - paragraph [ref=e146]: "Вот фрагмент готовой истории: цельный сюжет, единый стиль иллюстраций и детали, которые делают сказку личной. В этом примере героя зовут Аня."
+          - link "Собрать такую сказку ↗" [ref=e147] [cursor=pointer]:
+            - /url: /create
+        - generic [ref=e148]:
+          - article [ref=e149]:
+            - text: Фрагмент · страница 01
+            - heading [level=3] [ref=e150]:
+              - text: В ту ночь Аня замечает
+              - emphasis [ref=e151]: свет за окном…
+            - paragraph [ref=e152]: Снег ложится на крыши, часы бьют девять, а на подоконнике лежит карта. Кажется, её оставили специально для тебя, Аня.
+            - img "Иллюстрация в тематике «Волшебный лес»" [ref=e154]
+          - article [ref=e155]:
+            - text: Страница 02 / 12
+            - heading "Каждая звезда знает, что Аня уже в пути" [level=3] [ref=e156]
+            - paragraph [ref=e157]: "Первый шаг — и город зажигается огнями: приключение начинается прямо сейчас. Осталось только открыть первую страницу."
+            - img "Иллюстрация к сказке" [ref=e159]
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - generic [ref=e163]: Коллекция «Магия»
+            - heading [level=2] [ref=e164]:
+              - text: Выберите свой
+              - emphasis [ref=e165]: формат
+          - link "Подобрать формат ↗" [ref=e166] [cursor=pointer]:
+            - /url: "#finder"
+        - generic [ref=e167]:
+          - article [ref=e168]:
+            - generic [ref=e169]: 01 / Для маленьких и больших
+            - heading "Сказка, где герой — он" [level=3] [ref=e170]: Сказка,где герой — он
+            - paragraph [ref=e171]: Иллюстрированная история с именем, характером и любимыми деталями. Доступна сейчас.
+            - link "Собрать сказку ↗" [ref=e172] [cursor=pointer]:
+              - /url: /create
+            - generic [aria-hidden]:
+              - generic: Моясказка
+          - article [ref=e173]:
+            - generic [ref=e174]: 02 / Для сюрприза
+            - heading "Письма и квесты" [level=3] [ref=e175]: Письмаи квесты
+            - paragraph [ref=e176]: Тайное послание, загадки и домашнее приключение.
+            - generic [ref=e177]: Скоро
+            - generic [aria-hidden]:
+              - generic: Для тебя✦
+          - article [ref=e178]:
+            - generic [ref=e179]: 03 / Для эмоций
+            - heading "Видео поздравления" [level=3] [ref=e180]: Видеопоздравления
+            - paragraph [ref=e181]: Персональное обращение и ваши общие детали.
+            - generic [ref=e182]: Скоро
+            - generic [aria-hidden]:
+              - generic:
+                - generic [aria-hidden]: ▶
+          - article [ref=e183]:
+            - generic [ref=e184]: 04 / Для образа
+            - heading "AI-фотосессии" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Новый образ, семейная история или фото с питомцем.
+            - generic [ref=e187]: Скоро
+          - article [ref=e188]:
+            - generic [ref=e189]: 05 / Для близких
+            - heading "Открытки со смыслом" [level=3] [ref=e190]: Открыткисо смыслом
+            - paragraph [ref=e191]: Один адресат — одно точное поздравление.
+            - generic [ref=e192]: Скоро
+            - generic [aria-hidden]:
+              - generic:
+                - generic: С теплом
+                - generic [aria-hidden]: ✳
+                - generic: для тебя
+      - generic [ref=e193]:
+        - generic [ref=e194]: Для тебя,с теплом и звёздами.
+        - generic [ref=e201]:
+          - generic [ref=e202]: Что вы получите
+          - heading [level=2] [ref=e203]:
+            - text: Из идеи — в готовую
+            - emphasis [ref=e204]: книгу.
+          - paragraph [ref=e205]: "В конце вы получаете PDF-книгу: обложка, девять глав с иллюстрациями, завершающий разворот и письмо с поздравлением. Файл можно скачать, распечатать или отправить близкому."
+          - generic [ref=e206]:
+            - generic [ref=e207]:
+              - generic [ref=e208]: ✓
+              - text: Уникальный текст
+            - generic [ref=e209]:
+              - generic [ref=e210]: ✓
+              - text: 4–5 иллюстраций
+            - generic [ref=e211]:
+              - generic [ref=e212]: ✓
+              - text: Личные детали
+          - link "Начать с героя ↗" [ref=e213] [cursor=pointer]:
+            - /url: /create
+      - generic [ref=e214]:
+        - generic [ref=e216]:
+          - generic [ref=e217]: Как это работает
+          - heading [level=2] [ref=e218]:
+            - text: Три шага — и
+            - emphasis [ref=e219]: сказка готова
+        - generic [ref=e220]:
+          - article [ref=e221]:
+            - generic [aria-hidden] [ref=e222]: "1"
+            - heading "Расскажите о герое" [level=3] [ref=e223]
+            - paragraph [ref=e224]: Имя, возраст, увлечения и пара тёплых деталей — этого достаточно, чтобы история стала личной.
+          - article [ref=e225]:
+            - generic [aria-hidden] [ref=e226]: "2"
+            - heading "Проверьте заказ" [level=3] [ref=e227]
+            - paragraph [ref=e228]: До оплаты вы видите состав заказа и адрес, на который придёт готовая книга. Никаких скрытых пунктов.
+          - article [ref=e229]:
+            - generic [aria-hidden] [ref=e230]: "3"
+            - heading "Получите книгу" [level=3] [ref=e231]
+            - paragraph [ref=e232]: PDF с обложкой, иллюстрациями, девятью главами и письмом-поздравлением. Скачайте, распечатайте или отправьте.
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - generic [ref=e236]: Вопросы и ответы
+          - heading [level=2] [ref=e237]:
+            - text: Коротко о
+            - emphasis [ref=e238]: главном
+          - paragraph [ref=e239]: Собрали то, о чём спрашивают чаще всего. Если остались вопросы — напишите в поддержку, поможем разобраться.
+        - generic [ref=e240]:
+          - group [ref=e241]:
+            - generic "Нужны ли фотографии ребёнка? +" [ref=e242] [cursor=pointer]
+          - group [ref=e243]:
+            - generic "Сколько времени занимает создание книги? +" [ref=e244] [cursor=pointer]
+          - group [ref=e245]:
+            - generic "Что именно я получу? +" [ref=e246] [cursor=pointer]
+          - group [ref=e247]:
+            - generic "Это правда не шаблон? +" [ref=e248] [cursor=pointer]
+          - group [ref=e249]:
+            - generic "Нужна ли регистрация и безопасно ли это? +" [ref=e250] [cursor=pointer]
+          - group [ref=e251]:
+            - generic "Что делать, если книга не получилась? +" [ref=e252] [cursor=pointer]
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - heading "У хорошего подарка есть своя история." [level=2] [ref=e255]
+          - paragraph [ref=e256]: Давайте придумаем её вместе — это займёт всего несколько минут.
+        - link "Подобрать сказку ↗" [ref=e257] [cursor=pointer]:
+          - /url: /create
+  - contentinfo [ref=e258]:
+    - generic [ref=e259]:
+      - generic [ref=e260]: © 2026 Магия · подарки с историей · цифровая книга в PDF
+      - generic [ref=e261]:
+        - link "Политика данных" [ref=e262] [cursor=pointer]:
+          - /url: /legal/privacy
+        - link "Согласие" [ref=e263] [cursor=pointer]:
+          - /url: /legal/consent
+        - link "Условия сервиса" [ref=e264] [cursor=pointer]:
+          - /url: /legal/terms
+        - link "Реквизиты" [ref=e265] [cursor=pointer]:
+          - /url: /legal/requisites
+        - link "Найти заказ" [ref=e266] [cursor=pointer]:
+          - /url: /recover

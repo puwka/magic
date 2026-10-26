@@ -62,7 +62,7 @@ export const buildOrderCreatedEmail = (order: Order, orderLink: string) => {
     : "";
   const body = `
     ${demo}
-    ${paragraph("Здравствуйте! Заказ <strong>" + escapeHtml(order.orderNumber) + "</strong> для " + safeName + " создан. Стоимость — " + escapeHtml(formatPrice(order.priceRub)) + ".")}
+    ${paragraph("Здравствуйте! Заказ <strong>" + escapeHtml(order.orderNumber) + "</strong> создан. Герой истории — " + safeName + ". Стоимость — " + escapeHtml(formatPrice(order.priceRub)) + ".")}
     ${paragraph("Сохраните личную ссылку на заказ. По ней можно вернуться к статусу, оплате и готовой книге. Регистрация не нужна, а ссылка не индексируется поисковиками.")}
     <div style="margin:22px 0 24px;">${button(orderLink, "Открыть заказ")}</div>
     ${paragraph("Если вы ещё не завершили оплату, сделать это можно на странице заказа. Если ссылка не открывается, ответьте на это письмо или напишите в поддержку.")}
@@ -71,7 +71,8 @@ export const buildOrderCreatedEmail = (order: Order, orderLink: string) => {
   const text = [
     "Магия — персональная сказка",
     "",
-    "Заказ " + order.orderNumber + " для " + order.input.childName + " создан.",
+    "Заказ " + order.orderNumber + " создан.",
+    "Герой истории: " + order.input.childName + ".",
     "Стоимость: " + formatPrice(order.priceRub) + ".",
     order.isDemo ? "ДЕМО-РЕЖИМ: книга будет создана встроенным демонстрационным генератором." : "",
     "",
@@ -103,7 +104,7 @@ export const buildBookReadyEmail = (order: Order, orderLink: string) => {
     : "";
   const body = `
     ${demo}
-    ${paragraph("Сказка «" + escapeHtml(title) + "» для " + escapeHtml(order.input.childName) + " готова.")}
+    ${paragraph("Сказка «" + escapeHtml(title) + "» готова. Герой истории — " + escapeHtml(order.input.childName) + ".")}
     ${paragraph("Внутри — " + String(order.result?.story.chapters.length ?? 9) + " глав, иллюстрации и личное письмо. Книгу можно читать онлайн или скачать PDF.")}
     <div style="margin:22px 0 24px;">${button(orderLink, "Открыть книгу")}</div>
     ${paragraph("PDF хранится в приватном хранилище и доступен только по вашей личной ссылке.")}
@@ -112,7 +113,8 @@ export const buildBookReadyEmail = (order: Order, orderLink: string) => {
   const text = [
     "Магия — персональная сказка",
     "",
-    "Сказка «" + title + "» для " + order.input.childName + " готова.",
+    "Сказка «" + title + "» готова.",
+    "Герой истории: " + order.input.childName + ".",
     order.isDemo ? "ДЕМО-ВЕРСИЯ: книга создана демонстрационным генератором." : "",
     "",
     "Открыть книгу и скачать PDF:",

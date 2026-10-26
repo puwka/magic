@@ -134,7 +134,7 @@ export const PayView = ({ orderId, supportEmail }: PayViewProps) => {
     <div className="pay-card">
       <h1>Оплата заказа {order.orderNumber}</h1>
       <p>
-        Сказка, в которой {order.childName} — в главной роли: {order.themeLabel.toLowerCase()}, {order.childAge} лет. После
+        Сказка, в которой {order.childName} — в главной роли: {order.themeLabel}, {order.childAge} лет. После
         оплаты книга начнёт создаваться автоматически.
       </p>
       <div className="pay-amount">

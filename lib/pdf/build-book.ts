@@ -3,6 +3,7 @@ import PDFDocument from "pdfkit";
 import sharp from "sharp";
 import type { GeneratedIllustration, StoryBook } from "@/lib/generation/types";
 import type { Order } from "@/lib/orders/types";
+import { plural } from "@/lib/format";
 
 const PAGE_WIDTH = 595.28;
 const PAGE_HEIGHT = 841.89;
@@ -144,7 +145,7 @@ const drawBookCover = (doc: PdfDoc, input: BookPdfInput, coverImage: PdfImage) =
   doc.restore();
   drawStar(doc, PAGE_WIDTH / 2, lineY, 8, COLORS.gold);
 
-  doc.font("Sans").fontSize(9).fillColor("#aeb9ef").text("ИСТОРИЯ СОЗДАНА ДЛЯ", 50, lineY + 27, {
+  doc.font("Sans").fontSize(9).fillColor("#aeb9ef").text("ГЕРОЙ ЭТОЙ ИСТОРИИ", 50, lineY + 27, {
     width: CONTENT_WIDTH,
     align: "center",
     characterSpacing: 1.4,
@@ -161,9 +162,13 @@ const drawBookCover = (doc: PdfDoc, input: BookPdfInput, coverImage: PdfImage) =
   doc.restore();
   doc.font("Sans").fontSize(8).fillColor("#bdc6f5").text(
     input.story.chapters.length +
-      " глав · " +
+      " " +
+      plural(input.story.chapters.length, "глава", "главы", "глав") +
+      " · " +
       input.illustrations.length +
-      " иллюстраций · заказ " +
+      " " +
+      plural(input.illustrations.length, "иллюстрация", "иллюстрации", "иллюстраций") +
+      " · заказ " +
       input.order.orderNumber,
     50,
     footerY + 14,
@@ -234,19 +239,32 @@ const drawChapterPage = (
   }
 
   const availableHeight = PAGE_HEIGHT - 78 - cursor;
-  let fontSize = 10.8;
-  let lineGap = 4.1;
+  let fontSize = 12.2;
+  let lineGap = 4.7;
   // PDFKit измеряет текст активным шрифтом документа: опции `font`/`fontSize`
   // в heightOfString игнорируются, поэтому задаём их через doc перед замером.
   doc.font("Serif");
   doc.fontSize(fontSize);
   let textHeight = doc.heightOfString(chapter.text, { width: CONTENT_WIDTH, lineGap });
 
-  while (textHeight > availableHeight && fontSize > 8.4) {
+  while (textHeight > availableHeight && fontSize > 9) {
     fontSize -= 0.4;
-    lineGap = fontSize < 9.5 ? 3.1 : 4.1;
+    lineGap = fontSize < 10.5 ? 3.4 : 4.7;
     doc.fontSize(fontSize);
     textHeight = doc.heightOfString(chapter.text, { width: CONTENT_WIDTH, lineGap });
+  }
+
+  if (!image) {
+    // Крупный светлый номер заполняет воздух на текстовых разворотах
+    // и не спорит с основным текстом.
+    doc.save();
+    doc.font("Serif-Bold").fontSize(150).fillColor("#f2ecdf").text(
+      String(index + 1).padStart(2, "0"),
+      PAGE_WIDTH - MARGIN - 180,
+      PAGE_HEIGHT - 292,
+      { width: 180, align: "right", lineBreak: false },
+    );
+    doc.restore();
   }
 
   doc.font("Serif").fontSize(fontSize).fillColor("#29324a").text(chapter.text, MARGIN, cursor, {
@@ -260,7 +278,7 @@ const drawChapterPage = (
   doc.moveTo(MARGIN, footerY - 12).lineTo(PAGE_WIDTH - MARGIN, footerY - 12).lineWidth(0.4).stroke(COLORS.line);
   doc.restore();
   doc.font("Sans").fontSize(7).fillColor(COLORS.muted).text(
-    "Для " + input.order.input.childName,
+    input.order.input.childName + " · «Магия»",
     MARGIN,
     footerY,
     { width: CONTENT_WIDTH / 2, lineBreak: false },
@@ -328,7 +346,7 @@ const drawLetterPage = (doc: PdfDoc, input: BookPdfInput) => {
     characterSpacing: 1.8,
   });
 
-  doc.font("Serif-Bold").fontSize(28).fillColor(COLORS.ink).text("Для " + input.order.input.childName, MARGIN, 84, {
+  doc.font("Serif-Bold").fontSize(28).fillColor(COLORS.ink).text(input.order.input.childName, MARGIN, 84, {
     width: CONTENT_WIDTH,
     align: "center",
   });
@@ -362,7 +380,7 @@ const drawLetterPage = (doc: PdfDoc, input: BookPdfInput) => {
     align: "center",
     characterSpacing: 1.6,
   });
-  doc.font("Serif-Italic").fontSize(11).fillColor(COLORS.muted).text("Эта книга создана для", MARGIN, certTop + 40, {
+  doc.font("Serif-Italic").fontSize(11).fillColor(COLORS.muted).text("Герой этой книги", MARGIN, certTop + 40, {
     width: CONTENT_WIDTH,
     align: "center",
   });
@@ -423,7 +441,7 @@ export const buildBookPdf = async (input: BookPdfInput): Promise<Buffer> => {
     info: {
       Title: input.story.title,
       Author: "Магия",
-      Subject: "Персональная иллюстрированная сказка для " + input.order.input.childName,
+      Subject: "Персональная иллюстрированная сказка · " + input.order.input.childName,
       Creator: "Магия — подарки с историей",
       Producer: "Магия",
       Keywords: "сказка, персональная книга, " + input.order.orderNumber,

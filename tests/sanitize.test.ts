@@ -81,9 +81,10 @@ describe("parseAndSanitizeStory", () => {
     expect(() => parseAndSanitizeStory(JSON.stringify(raw), "Аня")).toThrow(/not suitable/);
   });
 
-  it("adds the child's name to the title when the model forgot it", () => {
+  it("adds the child's name to the title without a wrong case construction", () => {
     const { story } = parseAndSanitizeStory(JSON.stringify(buildRawStory()), "Аня");
-    expect(story.title).toContain("Аня");
+    expect(story.title).toBe("Аня: Звёздный компас");
+    expect(story.title).not.toMatch(/для\s+Аня/iu);
   });
 
   it("keeps an already personalised title intact", () => {

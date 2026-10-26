@@ -62,6 +62,31 @@ describe("DemoTextProvider", () => {
     ).toBe(false);
   });
 
+  it("never puts the nominative name into a prepositional phrase", async () => {
+    for (const theme of THEMES) {
+      const story = await provider.generate({ ...request, theme: theme.id });
+      const whole = [story.title, story.subtitle, story.dedication, story.letter, ...story.chapters.map((c) => c.text)]
+        .join(" ")
+        .toLowerCase();
+      expect(whole).not.toContain("для аня");
+      expect(whole).not.toContain("про аня");
+    }
+  });
+
+  it("keeps place names and sentence starts grammatical in every theme", async () => {
+    for (const theme of THEMES) {
+      const story = await provider.generate({ ...request, theme: theme.id });
+      const whole = story.chapters.map((chapter) => chapter.text).join(" ");
+      // После точки, вопросительного или восклицательного знака — заглавная.
+      expect(whole).not.toMatch(/[.!?]\s+[а-яё]/u);
+      // Прямая речь и цитаты тоже начинаются с заглавной.
+      expect(whole).not.toMatch(/«[а-яё]/u);
+      // Названия мест стоят в падеже, которого требует предлог.
+      expect(whole).not.toMatch(/до\s+(ручей|обсерваторию|папоротниковую|перевал|крыши)\b/iu);
+      expect(whole).not.toMatch(/где начинается\s+(вернуть|зажечь|найти|разбудить|освободить)\b/iu);
+    }
+  });
+
   it("reflects interests, wishes and extra details in the story", async () => {
     const story = await provider.generate({
       ...request,
@@ -71,8 +96,8 @@ describe("DemoTextProvider", () => {
     });
     const whole = story.chapters.map((chapter) => chapter.text).join(" ");
     expect(whole).toContain("фигурка динозавра");
-    expect(whole).toContain("побывать на Луне");
-    expect(whole).toContain("любит рисовать кометы");
+    expect(whole).toContain("Побывать на Луне");
+    expect(whole).toContain("Любит рисовать кометы");
   });
 
   it("falls back to the forest theme for an unknown theme id", async () => {

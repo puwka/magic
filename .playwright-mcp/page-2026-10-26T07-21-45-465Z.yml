@@ -1,0 +1,40 @@
+- generic [ref=f4e2]:
+  - banner [ref=f4e3]:
+    - generic [ref=f4e5]:
+      - link "Магия — на главную" [ref=f4e6] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f4e7]: ✳
+        - generic [ref=f4e8]:
+          - generic [ref=f4e9]: магия
+          - generic [ref=f4e10]: подарки с историей
+      - navigation "Основная навигация" [ref=f4e11]:
+        - link "Каталог" [ref=f4e12] [cursor=pointer]:
+          - /url: /#catalog
+        - link "Примеры" [ref=f4e13] [cursor=pointer]:
+          - /url: /#preview
+        - link "Как работает" [ref=f4e14] [cursor=pointer]:
+          - /url: /#how
+        - link "Мой заказ" [ref=f4e15] [cursor=pointer]:
+          - /url: /recover
+      - link "Создать сказку ↗" [ref=f4e17] [cursor=pointer]:
+        - /url: /create
+  - main [ref=f4e18]:
+    - generic [ref=f4e20]:
+      - heading "Нужна личная ссылка" [level=1] [ref=f4e21]
+      - paragraph [ref=f4e22]: Оплата открывается по личной ссылке из письма. Восстановите её по номеру заказа.
+      - link "Восстановить ссылку" [ref=f4e24] [cursor=pointer]:
+        - /url: /recover
+  - contentinfo [ref=f4e25]:
+    - generic [ref=f4e26]:
+      - generic [ref=f4e27]: © 2026 Магия · подарки с историей · цифровая книга в PDF
+      - generic [ref=f4e28]:
+        - link "Политика данных" [ref=f4e29] [cursor=pointer]:
+          - /url: /legal/privacy
+        - link "Согласие" [ref=f4e30] [cursor=pointer]:
+          - /url: /legal/consent
+        - link "Условия сервиса" [ref=f4e31] [cursor=pointer]:
+          - /url: /legal/terms
+        - link "Реквизиты" [ref=f4e32] [cursor=pointer]:
+          - /url: /legal/requisites
+        - link "Найти заказ" [ref=f4e33] [cursor=pointer]:
+          - /url: /recover

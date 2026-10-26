@@ -1813,6 +1813,7 @@ p {
   position: sticky;
   top: 96px;
   overflow: hidden;
+  contain: paint;
 }
 
 .summary-card::after {
@@ -2280,6 +2281,7 @@ p {
   box-shadow: var(--shadow-card);
   position: relative;
   overflow: hidden;
+  contain: paint;
 }
 
 .pay-card::after {
@@ -2337,6 +2339,15 @@ p {
   margin-top: 20px;
   position: relative;
   z-index: 1;
+}
+
+.pay-card .btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
+.pay-card .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .docs {
@@ -2743,7 +2754,21 @@ p {
   }
 
   .brand__name {
-    font-size: 23px;
+    font-size: 21px;
+  }
+
+  .brand__sub {
+    display: none;
+  }
+
+  .header-cta {
+    white-space: nowrap;
+    padding: 11px 14px;
+    font-size: 11px;
+  }
+
+  .header-actions {
+    gap: 7px;
   }
 
   .hero {

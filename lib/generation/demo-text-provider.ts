@@ -15,6 +15,7 @@ type Profile = {
   mission: string;
   firstPlace: string;
   secondPlace: string;
+  secondPlaceSign: string;
   helper: string;
   helperAction: string;
   solution: string;
@@ -38,8 +39,9 @@ const PROFILES: Record<string, Profile> = {
     guideDescription: "с хвостом, усыпанным созвездиями, и глазами цвета вечернего неба",
     problem: "на небе одна за другой гаснут звёзды: они забыли свои имена, и ночь становится всё темнее",
     mission: "вернуть небу семь имён",
-    firstPlace: "обсерваторию на холме",
+    firstPlace: "обсерватории на холме",
     secondPlace: "лунный сад за старым телескопом",
+    secondPlaceSign: "У входа в лунный сад",
     helper: "робот-садовник Орби",
     helperAction: "поливает звёзды тёплым светом и знает, где спрятаны забытые имена",
     solution: "Семь имён возвращаются на небо по одному, и над долиной загорается широкая река Млечного Пути.",
@@ -71,8 +73,9 @@ const PROFILES: Record<string, Profile> = {
     guideDescription: "с тонкими рожками и длинным шарфом, который всегда пахнет хвоей",
     problem: "в лесу погас большой Фонарь, и тропинки начали путаться между корнями",
     mission: "зажечь семь маленьких огней",
-    firstPlace: "ручей Шёпот",
-    secondPlace: "поляну колокольчиков",
+    firstPlace: "ручья Шёпот",
+    secondPlace: "поляна колокольчиков",
+    secondPlaceSign: "У входа на поляну колокольчиков",
     helper: "барсучиха Агата",
     helperAction: "хранит карту лесных корней и умеет разговаривать с самыми старыми деревьями",
     solution: "Семь огней вспыхивают один за другим, и тропинки снова находят дорогу домой.",
@@ -104,8 +107,9 @@ const PROFILES: Record<string, Profile> = {
     guideDescription: "с белым крылом, смешливым глазом и привычкой проверять, все ли дома",
     problem: "старый маяк перестал светить, и корабли больше не находят тихую бухту",
     mission: "найти новую звезду для маяка",
-    firstPlace: "Стеклянную бухту",
+    firstPlace: "Стеклянной бухты",
     secondPlace: "остров Ветров",
+    secondPlaceSign: "На острове Ветров",
     helper: "старый кит Бо",
     helperAction: "знает все течения и умеет петь так низко, что море затихает",
     solution: "Звезда опускается в фонарь маяка, и тёплый луч снова ложится на воду.",
@@ -137,8 +141,9 @@ const PROFILES: Record<string, Profile> = {
     guideDescription: "с добрыми глазами и рожками, похожими на маленькие антенны",
     problem: "в долине пересохла река, и древние великаны не могут вернуться к своим гнёздам",
     mission: "разбудить подземный родник",
-    firstPlace: "папоротниковую долину",
+    firstPlace: "папоротниковой долины",
     secondPlace: "каменные ворота",
+    secondPlaceSign: "У каменных ворот",
     helper: "птеранодон Пип",
     helperAction: "видит сверху все трещины в камне и умеет находить кратчайшую дорогу",
     solution: "Родник просыпается глубоко под камнями, вода бежит по старому руслу, и долина снова зеленеет.",
@@ -170,8 +175,9 @@ const PROFILES: Record<string, Profile> = {
     guideDescription: "с широкими рогами и колокольчиком, который звенит только в важные минуты",
     problem: "северное сияние запуталось в ущелье, и ночь над горами стала слишком тёмной",
     mission: "освободить сияние",
-    firstPlace: "перевал Ветров",
+    firstPlace: "перевала Ветров",
     secondPlace: "ледяное озеро",
+    secondPlaceSign: "На берегу ледяного озера",
     helper: "смотрительница маяка Астрид",
     helperAction: "живёт в маленьком доме на склоне и знает, как разговаривать с ветром",
     solution: "Сияние распутывается, поднимается над горами и окрашивает снег в зелёный, золотой и синий.",
@@ -203,8 +209,9 @@ const PROFILES: Record<string, Profile> = {
     guideDescription: "с пушистым хвостом и маленьким фонариком на ошейнике",
     problem: "секретные двери города перестали открываться, и чудеса спрятались по углам",
     mission: "найти три двери и вернуть свет",
-    firstPlace: "крыши старого квартала",
-    secondPlace: "часовую башню",
+    firstPlace: "крыш старого квартала",
+    secondPlace: "часовая башня",
+    secondPlaceSign: "У подножия часовой башни",
     helper: "бабушка Роза",
     helperAction: "шьёт тёплые шарфы, знает все дворы и хранит ключи от самых неожиданных мест",
     solution: "Три двери открываются одна за другой, и над городом зажигаются окна, гирлянды и маленькие фонарики.",
@@ -283,9 +290,12 @@ const packageItems = (interests: string[]) => {
   return { sentence: "В рюкзаке " + (items.length === 1 ? "лежит " : "лежат ") + list + ".", list };
 };
 
+const capitalizeFirst = (value: string) =>
+  value ? value.charAt(0).toLocaleUpperCase("ru-RU") + value.slice(1) : value;
+
 const quoteDetail = (label: string, value: string) => {
   if (!value) return "";
-  return " " + label + " «" + value.replace(/[«»]/g, "").trim() + "».";
+  return " " + label + " «" + capitalizeFirst(value.replace(/[«»]/g, "").trim()) + "».";
 };
 
 const letterText = (name: string, profile: Profile) =>
@@ -313,7 +323,7 @@ export class DemoTextProvider implements TextProvider {
     const items = packageItems(interests);
     const hintId = (interests[0] as InterestId | undefined) ?? "books";
     const hint = INTEREST_HINTS[hintId] ?? INTEREST_HINTS.books;
-    const detailLine = quoteDetail("На полях записки добавлено:", request.extraDetails);
+    const detailLine = quoteDetail("Ниже приписка:", request.extraDetails);
     const wishLine = quoteDetail("А в самом низу — заветное желание:", request.wish);
 
     const atmosphere = (index: number) => {
@@ -338,7 +348,7 @@ export class DemoTextProvider implements TextProvider {
         title: "Шаг за край знакомой карты",
         text: [
           name + " выходит за калитку — и привычная улица заканчивается там, где начинается тропинка, которой вчера ещё не было. На тропинке ждёт " + profile.guide + ", " + profile.guideDescription + ".",
-          "«" + profile.problem + ", — говорит " + profile.guide + ". — Если мы не поможем, всё вокруг станет чуть тусклее. Отправимся вместе?» " + moodLine,
+          "«" + capitalizeFirst(profile.problem) + ", — говорит " + profile.guide + ". — Если мы не поможем, всё вокруг станет чуть тусклее. Отправимся вместе?» " + moodLine,
           name + " крепче сжимает " + profile.titleObject + ". Ответ получается коротким, но очень важным: «Идём».",
         ].join("\n\n"),
       },
@@ -346,16 +356,16 @@ export class DemoTextProvider implements TextProvider {
         title: "Дорога, которой нет на карте",
         text: [
           "Сначала идти легко. Потом дорога сужается, трава становится выше, а привычные звуки остаются позади. Друзья добираются до " + profile.firstPlace + ". Здесь всё выглядит почти обычным — если не считать крошечных золотых искр, которые вспыхивают на камнях.",
-          "«Первый знак всегда рядом, — говорит " + profile.guide + ". — Нужно только перестать спешить». " + name + " оглядывается и замечает, что искры складываются в стрелку. Она указывает туда, где начинается " + profile.mission + ".",
-          "Впереди ждёт " + profile.secondPlace + ", а вместе с ним — первая настоящая загадка.",
+          "«Первый знак всегда рядом, — говорит " + profile.guide + ". — Нужно только перестать спешить». " + name + " оглядывается и замечает, что искры складываются в стрелку. Она указывает туда, где нужно " + profile.mission + ".",
+          "Впереди ждёт " + profile.secondPlace + " — и первая настоящая загадка.",
         ].join("\n\n"),
       },
       {
         title: "Первый огонь",
         text: [
-          "У входа в " + profile.secondPlace + " висит старый знак: три круга, пять лучей и маленькая звёздочка посередине. " + name + " долго смотрит на него, а потом вспоминает: " + hint + ".",
+          profile.secondPlaceSign + " висит старый знак: три круга, пять лучей и маленькая звёздочка посередине. " + name + " долго смотрит на него, а потом вспоминает: " + hint + ".",
           "Решение приходит не сразу. Сначала — тишина. Потом — осторожный шаг. Потом — ещё один. Когда " + name + " касается нужного места, раздаётся мягкий щелчок, и первый огонь просыпается.",
-          "Он не яркий, но его хватает, чтобы вокруг стало видно. " + profile.guide + " тихо говорит: «Один есть. Значит, остальные тоже получится найти».",
+          "Он не яркий, но его хватает, чтобы вокруг стало видно. " + capitalizeFirst(profile.guide) + " тихо говорит: «Один есть. Значит, остальные тоже получится найти».",
         ].join("\n\n"),
       },
       {
@@ -369,7 +379,7 @@ export class DemoTextProvider implements TextProvider {
       {
         title: "Помощь приходит неожиданно",
         text: [
-          "На пути появляется " + profile.helper + ". " + profile.helperAction + ". Сначала кажется, что помочь может только что-то большое и сильное. Но " + profile.helper + " улыбается: «Мне как раз нужен кто-то внимательный. Большие дела часто начинаются с маленьких рук».",
+          "На пути появляется " + profile.helper + ". " + capitalizeFirst(profile.helperAction) + ". Сначала кажется, что помочь может только что-то большое и сильное. Но " + profile.helper + " улыбается: «Мне как раз нужен кто-то внимательный. Большие дела часто начинаются с маленьких рук».",
           "Вместе они проверяют каждый уголок. " + name + " держит " + profile.titleObject + ", " + profile.guide + " прислушивается, а " + profile.helper + " показывает, где спрятались следующие огни. Дело идёт быстрее, когда никто не пытается справиться в одиночку.",
           "Вскоре загораются ещё три огня. Остаётся последний — самый важный.",
         ].join("\n\n"),
@@ -385,7 +395,7 @@ export class DemoTextProvider implements TextProvider {
       {
         title: "Свет возвращается",
         text: [
-          "На повороте открывается место, которого не было ни на одной карте. " + profile.solution + " " + profile.celebration + ".",
+          "На повороте открывается место, которого не было ни на одной карте. " + profile.solution + " " + capitalizeFirst(profile.celebration) + ".",
           "Сначала все молчат. Потом " + profile.guide + " смеётся, " + profile.helper + " хлопает в ладоши, а " + name + " смотрит на свет и чувствует, как усталость превращается в радость. " + moodLine,
           "Теперь " + name + " уносит с собой " + profile.keepsake + ". Это не просто подарок, а напоминание: " + profile.lesson,
         ].join("\n\n"),

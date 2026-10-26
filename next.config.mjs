@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  // PDFKit подгружает стандартные AFM-шрифты из своего пакета по __dirname.
+  // В бандле Next этот путь ломается (.next/server/vendor-chunks/data/Helvetica.afm),
+  // поэтому оставляем pdfkit внешним серверным пакетом.
+  serverExternalPackages: ["pdfkit"],
   async headers() {
     return [
       {
